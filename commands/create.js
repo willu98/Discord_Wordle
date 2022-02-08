@@ -18,7 +18,7 @@ module.exports = {
             //To start a game, you must do it in the server!');
         }
         console.log(word);
-        //if the me
+
         message.reply('Your Wordle has been created');
         const res = msg(game);
         message.author.send({ embeds: [res] });

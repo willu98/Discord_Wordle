@@ -25,7 +25,7 @@ module.exports = (game) => {
     These Characters(『a』) represent correct characters in the correct position`)
     .addFields(
         { 
-            name: `Your Wordle: (0/6)`, 
+            name: `Your Wordle: (${game.guessTry}/6)`, 
             value: 'as'
         },
         { name: '\u200B', value: '\u200B' },
