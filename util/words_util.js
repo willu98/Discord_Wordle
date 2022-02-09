@@ -3,7 +3,7 @@ const fs = require('fs');
 
 //loading all valid words that the user can type
 let allowedText = fs.readFileSync(__dirname + "/allowed_words.txt", 'utf-8');
-let allowedWords = allowedText.split('\r\n');
+let allowedWords = allowedText.split('\n');
 
 //loading all correct possible words
 let possibleText = fs.readFileSync(__dirname + '/possible_words.txt', 'utf-8');
