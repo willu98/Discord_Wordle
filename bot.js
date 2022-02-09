@@ -1,7 +1,7 @@
 const dotenv    = require('dotenv');
 const fs        = require('fs');
 const words     = require('./util/words_util');
-const { Intents, Client, Collection, Interaction }   = require("discord.js");
+const { Intents, Client, Collection, Interaction } = require("discord.js");
 
 dotenv.config();
 

@@ -1,16 +1,27 @@
 const { MessageEmbed } = require('discord.js');
 
-const blank = `${':blue_square:'.repeat(6)}\n`;
-
-
 
 module.exports = (game) => {
 
-    
     let entries = '';
     game.guesses.forEach(e => {
         entries += `${e}\n`;
     });
+
+    let characters = '';
+    game.characters.forEach(e => {
+        characters += `${e} `;
+    });
+    
+    let afterGame = '';
+    if(game.correct){
+        afterGame = `\nYou found the word in ${game.guessTry}/6 tries`;
+    }
+    else if(game.guessTry === 6){
+        afterGame = `\nYou failed to find the word, the word was ${game.word}`;
+    }
+
+    console.log(afterGame);
 
     const message = new MessageEmbed()
     .setColor('#c0fe8b')
@@ -25,9 +36,12 @@ module.exports = (game) => {
     .addFields(
         { 
             name: `Your Wordle: (${game.guessTry}/6)`, 
-            value: entries?`${entries}`:'Please make your first move!'
+            value: `${entries?entries:'Please make your first move!'} ${afterGame}` 
         },
-        { name: '\u200B', value: '\u200B' },
+        { 
+            name: `Characters`, 
+            value: `${characters}`
+        },
         { name: 'Inline field title', value: 'Some value here', inline: true },
         { name: 'Inline field title', value: 'Some value here', inline: true },
     )

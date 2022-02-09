@@ -19,6 +19,7 @@ module.exports = (player, word) => {
         words:[],
         guessTry:0,
         guesses:[],
-        characters:'ａ ｂ ｃ ｄ ｅ ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ ｎ ｏ ｐ ｑ ｒ ｓ ｔ ｕ ｖ ｗ ｘ ｚ'.split(' ')
+        characters:'ａ ｂ ｃ ｄ ｅ ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ ｎ ｏ ｐ ｑ ｒ ｓ ｔ ｕ ｖ ｗ ｘ ｙ ｚ'.split(' '),
+        correct:false
     };
 };
