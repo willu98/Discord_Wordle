@@ -17,6 +17,8 @@ module.exports = (player, word) => {
         word,
         wordMap:getMap(word),
         words:[],
-        guessTry:0
+        guessTry:0,
+        guesses:[],
+        characters:'ａ ｂ ｃ ｄ ｅ ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ ｎ ｏ ｐ ｑ ｒ ｓ ｔ ｕ ｖ ｗ ｘ ｚ'.split(' ')
     };
 };
