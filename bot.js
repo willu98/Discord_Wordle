@@ -31,6 +31,9 @@ const curr_games = [];
 client.once("ready", () => {
     console.log("Bot Online");
     client.user.setActivity('Wordle');
+
+    console.log(words.allowedWords);
+    console.log(words.possibleWords);
 });
 
 
