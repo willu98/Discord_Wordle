@@ -33,7 +33,6 @@ client.once("ready", () => {
     client.user.setActivity('Wordle');
 
     console.log(words.allowedWords);
-    console.log(words.possibleWords);
 });
 
 
