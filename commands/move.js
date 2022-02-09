@@ -28,6 +28,9 @@ const verification = (guess, word, wordMap, characters) => {
             //
             result[i] = chars_right[guessChars[i].charCodeAt(0) - 97];
 
+            //setting all keys on keyboard to '' by default
+            characters[guessChars[i].charCodeAt(0) - 97] = result[i];
+
             counter++;
         }
     }
@@ -37,7 +40,7 @@ const verification = (guess, word, wordMap, characters) => {
         let char = (result[i] == '') ? chars_regular[guessChars[i].charCodeAt(0) - 97]:result[i];
         
         //setting all keys on keyboard to '' by default
-        characters[guessChars[i].charCodeAt(0) - 97] = '';
+        characters[guessChars[i].charCodeAt(0) - 97] = characters[guessChars[i].charCodeAt(0) - 97]?characters[guessChars[i].charCodeAt(0) - 97]:'';
         
         //If the word matches a character from the guess
         if(wordMap.has(guessChars[i]) && result[i] === ''){
