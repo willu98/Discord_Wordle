@@ -1,8 +1,5 @@
 #!/bin/bash
 
 #download node and npm
-sudo apt update
-sudo apt install nodejs
-node -v
-sudo apt install npm
-
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
