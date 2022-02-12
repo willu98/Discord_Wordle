@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/wordle-bot
+    destination: /home/ubuntu/wordle-bot
 hooks:
-  BeforeInstall:
-   - location: scripts/before_install.sh
+  ApplicationStop:
+   - location: scripts/application_stop.sh
      timeout: 300
-     runas: root
+     runas: ubuntu
   ApplicationStart:
    - location: scripts/application_start.sh
      timeout: 300
-     runas: root
+     runas: ubuntu
