@@ -10,7 +10,7 @@ module.exports = {
         let game;
         const word = dict.getRandomWord(dict.possibleWords);
         if(!games.find(e => e.player == message.author.id)){
-            game = Game(message.author.id, word);
+            game = Game(message.author.id, 'tests');
             games.push(game);
         }
         else{
