@@ -6,4 +6,4 @@ cd /home/ubuntu/wordle-bot
 # install node modules
 npm install
 # start our node app in the background using pm2
-npm start
+sudo pm2 start "npm start" --name bot.js
