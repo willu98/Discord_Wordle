@@ -8,7 +8,7 @@ describe('Test verify function', () => {
         const characters = 'ａ ｂ ｃ ｄ ｅ ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ ｎ ｏ ｐ ｑ ｒ ｓ ｔ ｕ ｖ ｗ ｘ ｙ ｚ'.split(' ');
         const verified = verify('arose', 'arose', map1, characters);
         expect(verified).toStrictEqual({ resultStr: '『a』『r』『o』『s』『e』', counter: 5 });
-        expect(characters).toStrictEqual('『a』 ｂ ｃ ｄ 『e』 ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ  『o』 ｐ ｑ 『r』 『s』 ｔ ｕ ｖ ｗ ｘ ｙ ｚ'.split(' '));
+        expect(characters).toStrictEqual('『a』 ｂ ｃ ｄ 『e』 ｆ ｇ ｈ ｉ ｊ ｋ ｌ ｍ ｎ 『o』 ｐ ｑ 『r』 『s』 ｔ ｕ ｖ ｗ ｘ ｙ ｚ'.split(' '));
     });
 
     test('Testing correct (Different capitalization):', () => {
