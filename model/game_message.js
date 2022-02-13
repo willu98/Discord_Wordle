@@ -28,8 +28,8 @@ module.exports = (game) => {
     .setTitle('Wordle: Single-Player')        
     .setAuthor({ name: 'Wordle', iconURL: 'https://i.imgur.com/gdS7n8M.png'})
     .setDescription(`How to play:
-    To guess a word: !w 'your word'
-    To end the game: !w end\n
+    To guess a word: ~w 'your word'
+    To end the game: ~w end\n
     These Characters(ａ) represent incorrect characters
     These Characters(【a】) represent correct characters in the incorrect position
     These Characters(『a』) represent correct characters in the correct position`)

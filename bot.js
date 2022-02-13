@@ -46,7 +46,7 @@ client.on("messageCreate", message => {
         command.execute(message,inputs,curr_games, words);       
     }
     else{
-        message.reply('Invalid command, type !help for a list of commands!');
+        message.reply('Invalid command, type ~help for a list of commands!');
     }
 });
 
