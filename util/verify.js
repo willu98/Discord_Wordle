@@ -37,32 +37,41 @@ const chars_right = '『a』 『b』 『c』 『d』 『e』 『f』 『g』 『
 
         let char = (result[i] == '') ? chars_regular[guessChars[i].charCodeAt(0) - 97]:result[i];
         
-        //setting all keys on keyboard to '' by default
-        characters[guessChars[i].charCodeAt(0) - 97] = characters[guessChars[i].charCodeAt(0) - 97]?characters[guessChars[i].charCodeAt(0) - 97]:'';
-        
-        //If the word matches a character from the guess
-        if(wordMap.has(guessChars[i]) && result[i] === ''){
 
-            //accounting for character found
-            wordMap.set(guessChars[i], wordMap.get(guessChars[i]) - 1);
+        if(result[i] === ''){
+            //If the word matches a character from the guess
+            if(wordMap.has(guessChars[i])){
 
-            //ensures that character in guess exists in word
-            //if the amount of a particular character is below that of the word
-            //eg: if guessChars[i] === 'a' checks to see if the number of a's in the guess is less than in the word
-            if(wordMap.get(guessChars[i]) >= 0){
-                //if the character is in the correct position
-                if(guessChars[i] === wordChars[i]){
-                    char = chars_right[guessChars[i].charCodeAt(0) - 97];
-                    counter++;
+                //accounting for character found
+                wordMap.set(guessChars[i], wordMap.get(guessChars[i]) - 1);
+
+                //ensures that character in guess exists in word
+                //if the amount of a particular character is below that of the word
+                //eg: if guessChars[i] === 'a' checks to see if the number of a's in the guess is less than in the word
+                if(wordMap.get(guessChars[i]) >= 0){
+                    //if the character is in the correct position
+                    if(guessChars[i] === wordChars[i]){
+                        char = chars_right[guessChars[i].charCodeAt(0) - 97];
+                        counter++;
+                    }
+                    else{
+                        char = chars_wrong[guessChars[i].charCodeAt(0) - 97];          
+                    }
+
+                    if(characters[guessChars[i].charCodeAt(0) - 97] !== chars_right[guessChars[i].charCodeAt(0) - 97]){
+                        characters[guessChars[i].charCodeAt(0) - 97] = char;
+                    }
                 }
-                else{
-                    char = chars_wrong[guessChars[i].charCodeAt(0) - 97];          
-                }
-                if(characters[guessChars[i].charCodeAt(0) - 97] !== chars_right[guessChars[i].charCodeAt(0) - 97])
-                    characters[guessChars[i].charCodeAt(0) - 97] = char;
+            }     
+            else{
+                characters[guessChars[i].charCodeAt(0) - 97] = '';
             }
         }
+        
         result[i] = char;
+    }
+    while(characters.indexOf('')!==-1){
+        characters.splice(characters.indexOf(''), 1);
     }
     const resultStr = result.join('');
     return {
