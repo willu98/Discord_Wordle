@@ -1,4 +1,4 @@
-const game = require('../game');
+const game = require('../model/game');
 
 describe('my game', () => {
     test('correct word maps3', () => {
