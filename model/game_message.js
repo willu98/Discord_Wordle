@@ -41,9 +41,7 @@ module.exports = (game) => {
         { 
             name: `Characters`, 
             value: `${characters}`
-        },
-        { name: 'Inline field title', value: 'Some value here', inline: true },
-        { name: 'Inline field title', value: 'Some value here', inline: true },
+        }
     )
     .setTimestamp()
     .setFooter({ text: 'Made by Willu', iconURL: 'https://avatars.githubusercontent.com/u/39043113?s=96&v=4' });        
