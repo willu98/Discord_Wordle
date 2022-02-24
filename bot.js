@@ -36,7 +36,7 @@ client.once("ready", () => {
 
 client.on("messageCreate", message => {
     //expects first character to be ! for a command
-    if (message.content.charAt(0) != '~' && message.content.charAt(0) != '!') return;
+    if (message.content.charAt(0) != '~') return;
 
     const inputs = message.content.slice(1).split(' ');    
     const command = client.commands.get(inputs[0]);
