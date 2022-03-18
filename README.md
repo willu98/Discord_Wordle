@@ -1,7 +1,7 @@
 Discord_Wordle
 # Discord_Wordle
 Wordle bot for discord written in Node.JS. 
-* Players are able to play Wordle via the !play command for single player and ~play @opponent to play against someone.
+* Players are able to play Wordle via the !play command for single player.
 * The bot will display the game boards to players via  private text channel
 
 # Adding The Bot To Your Server
